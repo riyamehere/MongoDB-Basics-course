@@ -1,0 +1,48 @@
+Quiz: What is JSON?
+
+Problem:
+Which of the following documents is correct JSON?
+
+Ans-
+{"name" : "Devi", "age": 19, "major": "Computer Science"}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Quiz: Import and Export
+
+Problem:
+Which of the following commands will add a collection that is stored in animals.json to an Atlas cluster?
+Attempts Remaining:Correct Answer
+
+Ans-
+mongoimport
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Quiz: Data Explorer
+
+Problem:
+In the sample_training.trips collection a person with birth year 1961 took a trip that started at "Howard St & Centre St". What was the end station name for that trip?
+
+Ans-
+"South End Ave & Liberty St"
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Quiz: Find Command
+
+Problem:
+What does it do in the mongo shell?
+Attempts Remaining:Correct Answer
+
+Ans-
+Iterates through the cursor results
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Quiz: The mongo shell
+
+Problem:
+Which of the following statements are true about the mongo shell?
+Attempts Remaining:Correct Answer
+
+Ans-
+1. It allows you to interact with your MongoDB instance without using a Graphical User Interface
+2. It is a fully functioning JavaScript interpreter

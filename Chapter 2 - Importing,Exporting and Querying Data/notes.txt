@@ -1,0 +1,37 @@
+1) COMMANDS FOR IMPORTING AND EXPORTING DATA :
+
+mongodump --uri "mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies"
+
+mongoexport --uri="mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies" --collection=sales --out=sales.json
+
+mongorestore --uri "mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies"  --drop dump
+
+mongoimport --uri="mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies" --drop sales.json
+
+2) Namespace - The concatenation of the database name and collection name is called a namespace.
+
+We looked at the sample_training.zips collection and issued the following queries:
+
+{"state": "NY"}
+{"state": "NY", "city": "ALBANY"}
+
+3) Connect to the Atlas cluster:
+mongo "mongodb+srv://<username>:<password>@<cluster>.mongodb.net/admin"
+
+4) Find commands:
+
+show dbs
+
+use sample_training
+
+show collections
+
+db.zips.find({"state": "NY"})
+
+5) more commands:
+
+db.zips.find({"state": "NY"}).count()
+
+db.zips.find({"state": "NY", "city": "ALBANY"})
+
+db.zips.find({"state": "NY", "city": "ALBANY"}).pretty()

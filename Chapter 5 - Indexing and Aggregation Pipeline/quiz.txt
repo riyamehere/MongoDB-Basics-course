@@ -1,0 +1,73 @@
+Chapter 5 - Quiz
+
+Lab: Aggregation Framework
+Problem:
+To complete this exercise connect to your Atlas cluster using the in-browser IDE space at the end of this chapter.
+What room types are present in the sample_airbnb.listingsAndReviews collection?
+
+ans-
+db.listingsAndReviews.aggregate([ { "$group": { "_id": "$room_type" } }])
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Quiz: Aggregation Framework
+Problem:
+
+What are the differences between using aggregate() and find()?
+
+ans-
+1. aggregate() allows us to compute and reshape data in the cursor
+2. aggregate() can do what find() can and more.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Quiz 1: sort() and limit()
+Problem:
+
+Which of the following commands will return the name and founding year for the 5 oldest companies in the sample_training.companies collection?
+ans-
+
+1) db.companies.find({ "founded_year": { "$ne": null }},
+                  { "name": 1, "founded_year": 1 }
+                 ).sort({ "founded_year": 1 }).limit(5)
+
+2) db.companies.find({ "founded_year": { "$ne": null }},
+                  { "name": 1, "founded_year": 1 }
+                 ).limit(5).sort({ "founded_year": 1 })
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Quiz 2: sort() and limit()
+Problem:
+
+To complete this exercise connect to your Atlas cluster using the in-browser IDE space at the end of this chapter.
+In what year was the youngest bike rider from the sample_training.trips collection born?
+
+ans-
+db.trips.find({ "birth year": { "$ne":"" } },
+              { "birth year": 1 }).sort({ "birth year": -1 }).limit(1)
+              
+1999
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Quiz: Introduction to Indexes
+Problem:
+
+Jameela often queries the sample_training.routes collection by the src_airport field like this:
+db.routes.find({ "src_airport": "MUC" }).pretty()
+
+ANS-
+db.routes.createIndex({ "src_airport": -1 })
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Quiz: Introduction to Data Modeling
+Problem:
+
+What is data modeling?
+ANS- a way to organize fields in a document to support your application performance and querying capabilities
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+problem:
+How does the upsert option work?
+
+ans: 
+1) When upsert is set to false and the query predicate returns an empty cursor then there will be no updated documents as a result of this operation.
+2) By default upsert is set to false
+3) When upsert is set to true and the query predicate returns an empty cursor, the update operation creates a new document using the directive from the query predicate and the update predicate.
+
+
+
+
+

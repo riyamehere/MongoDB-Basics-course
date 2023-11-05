@@ -1,0 +1,25 @@
+Quiz: Atlas Features
+Problem:
+What actions are available to you via the Aggregation Builder in the Atlas Data Explorer?
+Attempts Remaining:Correct Answer
+Check all answers that apply:
+
+ans-
+1. A preview of the data in the pipeline at each selected stage.
+2. Syntax for each selected aggregation stage.
+3. Export pipeline to a programming language.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Quiz: Atlas Products
+Problem:
+
+What is MongoDB Charts?
+Choose the best answer:
+A product that helps you build visualizations of the data stored in your Atlas Cluster.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Quiz: Compass
+Problem:
+
+What is MongoDB Compass?
+ans- MongoDB's Graphical User Interface Product

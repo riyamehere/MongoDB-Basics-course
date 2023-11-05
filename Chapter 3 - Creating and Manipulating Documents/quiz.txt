@@ -1,0 +1,126 @@
+Chapter 3 - Quiz
+
+Quiz: ObjectId
+
+Problem:
+How does the value of _id get assigned to a document?
+
+Ans-
+1. It is automatically generated as an ObjectId type value.
+2. You can select a non ObjectId type value when inserting a new document, as long as that value is unique to this collection.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Quiz: Insert Errors
+
+Problem:
+Select all true statements from the following list:
+
+Ans-
+1. MongoDB can store duplicate documents in the same collection, as long as their _id values are different.
+2. If a document is inserted without a provided _id value, then the _id field and value will be automatically generated for the inserted document before insertion.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Quiz: Insert Order
+Problem:
+
+Which of the following commands will successfully insert 3 new documents into an empty pets collection?
+
+Ans-
+1) db.pets.insert([{ "_id": 1, "pet": "cat" },
+                { "_id": 1, "pet": "dog" },
+                { "_id": 3, "pet": "fish" },
+                { "_id": 4, "pet": "snake" }], { "ordered": false })
+                
+2)db.pets.insert([{ "pet": "cat" }, { "pet": "dog" },
+                { "pet": "fish" }])
+
+3)db.pets.insert([{ "_id": 1, "pet": "cat" },
+                { "_id": 2, "pet": "dog" },
+                { "_id": 3, "pet": "fish" },
+                { "_id": 3, "pet": "snake" }])
+                
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Quiz: Updating Documents
+Problem:
+MongoDB has a flexible data model, which means that you can have fields that contain documents, or arrays as their values.
+Select any invalid MongoDB documents from the given choices:
+
+Ans- none of the given
+{ "_id": 1,
+  "pet": "cat",
+  "attributes": [ { "coat": "fur",
+                    "type": "soft" },
+                  { "defense": "claws",
+                    "location": "paws",
+                    "nickname": "murder mittens" } ],
+  "name": "Furball" }
+
+{ "_id": 1,
+  "pet": "cat",
+  "fur": "soft",
+  "claws": "sharp",
+  "name": "Furball" }
+
+{ "_id": 1,
+  "pet": "cat",
+  "attributes": { "coat": "soft fur",
+                  "paws": "cute but deadly" },
+  "name": "Furball" }
+  
+all of these are valid
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Quiz: Updating Documents in the shell
+Problem:
+Given a pets collection where each document has the following structure and fields:
+{
+ "_id": ObjectId("5ec414e5e722bb1f65a25451"),
+ "pet": "wolf",
+ "domestic?": false,
+ "diet": "carnivorous",
+ "climate": ["polar", "equatorial", "continental", "mountain"]
+}
+Which of the following commands will add new fields to the updated documents?
+
+Ans-
+db.pets.updateMany({ "pet": "cat" },
+                   { "$push": { "climate": "continental",
+                                "look": "adorable" } })
+                                
+ db.pets.updateMany({ "pet": "cat" },
+                   { "$set": { "type": "dangerous",
+                               "look": "adorable" }})
+                               
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Quiz 1: Deleting Documents
+Problem:
+
+The sample dataset contains a few databases that we will not use in this course. Clean up your Atlas cluster and get rid of all the collections in these databases:
+
+sample_analytics
+sample_geospatial
+sample_weatherdata
+Does removing all collections in a database also remove the database?
+
+Ans- Yes
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Quiz 2: Deleting Documents
+
+Problem:
+Which of the following commands will delete a collection named villains?
+
+ANS - db.villains.drop()
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
